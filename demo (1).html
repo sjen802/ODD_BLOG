@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>coreUI Demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li><a class="active" href="#home">價位預測</a></li>
+            <li><a href="#news">方向預測</a></li>
+        </ul>
+    </div>
+    <div class="center">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'My First dataset',
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [0, 10, 5, 2, 20, 30, 45]
+                }]
+            },
+
+            // Configuration options go here
+            options: {}
+        });
+    </script>
+
+    <style type="text/css">
+        .center {
+            padding-left: 10%;
+            padding-right: 10%;
+            align-items: center;
+        }
+        
+        .top-bar {
+            height: 6%;
+            background-color: #CBE5E4;
+            border: 2.5px solid;
+            border-color: #112B83;
+            /* font-size: 24pt; */
+        }
+        
+        .top-barItem {
+            font-size: 20pt;
+            background-color: #A45A33;
+        }
+        
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            border: none;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #CBE5E4;
+            border: #112B83 solid;
+        }
+        
+        li {
+            float: left;
+            border: 3px solid #bbb;
+            border-right: none;
+        }
+        
+        li a {
+            display: block;
+            color: white;
+            font-size: 20pt;
+            text-align: center;
+            padding: 18px 40px;
+            text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+            background-color: #A45A33;
+        }
+        
+        .active {
+            background-color: #A45A33;
+        }
+    </style>
+
+</body>
+
+</html>
